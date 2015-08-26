@@ -26,3 +26,20 @@ var alphabet = {
   "y" : ["YAML", "Yeoman"],
   "z" : ["Zendesk", "Zapier", "ZenHub"]
 };
+
+var makeStack = function (word) {
+  var currentAlphabet = {};
+  
+  return _.map(word.split(''), function (letter) {
+    letter = letter.toLowerCase();
+
+    if (!currentAlphabet[letter] || !currentAlphabet[letter].length) {
+      currentAlphabet[letter] = _.shuffle(alphabet[letter]);
+    }
+
+    return currentAlphabet[letter].shift();
+  });
+};
+
+console.log(makeStack('test'));
+console.log(makeStack('aaaaaaaa'));
