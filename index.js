@@ -39,7 +39,7 @@ $(document).ready(function () {
 
     for(var i = 0; i < res.length; i++){
       $('#result').append("<b>"+res[i].slice(0,1).toUpperCase()+"</b>");      
-      $('#result').append(res[i].toLowerCase().slice(1)+"<br/>");      
+      $('#result').append(res[i].slice(1)+"<br/>");      
     }
   });
 
