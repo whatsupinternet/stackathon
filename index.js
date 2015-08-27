@@ -5,7 +5,7 @@ var alphabet = {
   "d" : ["D3.js", "DynamoDB", "Docker", "Django", "DigitalOcean"],
   "e" : ["Ember.js", "Express", "Emacs", "Erlang"],
   "f" : ["F#", "Flask", "Flex", "Foundation"],
-  "g" : ["Go", "Git", "Grunt"],
+  "g" : ["Go", "Git", "GitHub", "Grunt"],
   "h" : ["Hadoop", "Heroku", "Handlebars.js"],
   "i" : ["io.js", "IFTTT"],
   "j" : ["Java", "JavaScript", "jQuery", "jQuery UI", "jQuery Mobile", "JSON"],
