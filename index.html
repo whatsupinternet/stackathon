@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <title>Stackathon</title>
-  </head>
-  <body>
-    
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script type="text/javascript" src="index.js"></script>
-  </body>
+<head>
+	<title>Stackathon</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+	<style>
+		#input {
+			font-weight: bold;
+			text-transform: uppercase;
+			border: none !important
+		}
+		#input::before{
+			content:"a";
+		}
+		* {
+			font-family:monospace;
+		}
+		h1, h2, #input, #result {
+			font-size: 2em !important;
+		}
+		h2{
+			margin-top:3px;
+		}
+	</style>
+</head>
+<body class='container'>
+
+	<div style="position:absolute; bottom:0; left:0; font-size:small; margin:5px;">
+		another terrible project by <a href="http://whatsupinter.net">whatsupinter.net</a>
+	</div>
+
+
+	<div class='row'>
+		<div class='col s12 m6 right-align'>
+			<h1> Stackathon </h1>
+			<p id='instruction'>
+				Every programmer needs a stack. If you want to write some good code, you need a good stack. Don't settle for any old stack if you're not just writing any old code.<br/><br/>
+				Remember, it's not about having the biggest stack or the newest stack, it's about having a stack that is firm, robust, and most importantly, tailored to your particular needs. We're here to help you with that. 
+			</p>
+		</div>
+		<div class='col s12 m6'>
+			<br/>
+			<input class='' type="text" id="input" value="" placeholder='stack it up'/>
+			<h2 id='result'></h2>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</body>
 </html>

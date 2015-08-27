@@ -24,14 +24,34 @@ var alphabet = {
   "w" : ["Windows Server", "Windows Azure", "Worpress"],
   "x" : ["XML", "Xcode", "XSLT"],
   "y" : ["YAML", "Yeoman"],
-  "z" : ["Zendesk", "Zapier", "ZenHub"]
+  "z" : ["Zendesk", "Zapier", "ZenHub"],
+  "_" : ["Underscore.js"],
+  " " : [" "]
 };
+
+$(document).ready(function () {
+
+  $('#input').focus();
+
+  $('#input').on('input propertychange paste', function() {
+    $('#result').empty();
+    var res = makeStack($('#input').val());
+
+    for(var i = 0; i < res.length; i++){
+      $('#result').append("<b>"+res[i].slice(0,1).toUpperCase()+"</b>");      
+      $('#result').append(res[i].toLowerCase().slice(1)+"<br/>");      
+    }
+  });
+
+});
 
 var makeStack = function (word) {
   var currentAlphabet = {};
   
   return _.map(word.split(''), function (letter) {
     letter = letter.toLowerCase();
+
+    if (!isLetter(letter)){ return ""; }
 
     if (!currentAlphabet[letter] || !currentAlphabet[letter].length) {
       currentAlphabet[letter] = _.shuffle(alphabet[letter]);
@@ -41,5 +61,10 @@ var makeStack = function (word) {
   });
 };
 
-console.log(makeStack('test'));
-console.log(makeStack('aaaaaaaa'));
+// console.log(makeStack('test'));
+// console.log(makeStack('aaaaaaaa'));
+
+function isLetter(str) {
+  if(str=="_"){return true;}
+  return str.length === 1 && str.match(/[a-z]/i);
+}
